@@ -131,7 +131,7 @@ exec 是在容器中打开新的终端，并且可以启动新的进程，用 ex
 > cat 文件名.tar | docker import - 镜像用户/镜像名:镜像版本号
 
 例如：
-> cat abc.tar | docker import -t shics/ubuntu:3.7
+> cat abc.tar | docker import - shics/ubuntu:3.7
 
 作用：
 > import 从 tar 包中的内容创建一个新的文件系统再导入为镜像
