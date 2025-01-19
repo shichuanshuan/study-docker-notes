@@ -1,5 +1,5 @@
 # 新建或启动容器
-命令：
+`命令：`
 > docker run 镜像名
 
 --name=“容器新名字” 为容器指定一个名词；不填随机生成名字
@@ -14,11 +14,11 @@
 
 -p：指定端口映射
 
-示例：
+`示例：`
 > docker run -it --name=myu1 ubuntu bash
 
 # 列出当前所有正在运行的容器
-命令：
+`命令：`
 >docker ps [OPTIONS]
 
 -a: 列出当前所有正在运行的容器 + 历史上运行过的
@@ -30,52 +30,52 @@
 -q：静默模式，只显示容器编号
 
 # 退出容器
-方式1
+`方式1`
 > exit：run 进去容器，exit退出，容器停止
 
-方式2
+`方式2`
 > ctrl+p+q：run 进去容器，ctrl+p+q退出，容器不停止
 
 # 启动已停止运行的容器
-命令：
+`命令：`
 > docker start 容器 ID 或容器名
 
-示例：
+`示例：`
 > docker start e1f0ccc9790d
 
 # 重启容器
-命令：
+`命令：`
 > docker restart 容器 ID 或容器名
 
-示例：
+`示例：`
 > docker restart e1f0ccc9790d
 
 # 停止容器
-命令：
+`命令：`
 > docker stop 容器 ID 或容器名
 
-示例：
+`示例：`
 > docker stop e1f0ccc9790d
 
 # 强制停止容器
-命令：
+`命令：`
 > docker kill 容器 ID 或容器名
 
-示例：
+`示例：`
 > docker kill e1f0ccc9790d
 
 # 删除已停止的容器
-命令：
+`命令：`
 > docker rm 容器 ID (rmi 是删除镜像)
 
-示例：
+`示例：`
 > docker rm e1f0ccc9790d
 
 一次性删除多个容器实例 docker rm -f $(docker ps -a -q)
 
 # 重要
 ## 启动守护式容器（后台服务器）
-命令：
+`命令：`
 > docker run -d 容器名
 
 redis 前台启动演示
@@ -88,19 +88,19 @@ redis 前台启动演示
 ```docker run -d redis```
 
 ## 查看容器日志
-命令：
+`命令：`
 > docker logs 容器ID
 
 ## 查看容器内运行的进程
-命令：
+`命令：`
 > docker top 容器ID
 
 ## 查看容器内部细节
-命令：
+`命令：`
 > docker inspect 容器ID
 
 ## 进入正在运行的容器并以命令行交互
-命令：
+`命令：`
 
 > docker exec -it 容器ID bashShell
 > 
@@ -116,21 +116,21 @@ exec 是在容器中打开新的终端，并且可以启动新的进程，用 ex
 推荐使用 docker exec 命令，因为退出容器终端，不会导致容器的停止。
 
 # 从容器中拷贝文件到主机上
-命令：
+`命令：`
 > docker cp 容器:ID 容器内路径 目的主机路径
 
 # 导入和导出容器
-命令：
+`命令：`
 > docker export 容器ID > 文件名.tar
 
 作用：
 > 导出容器的内容留作为一个 tar 归档文件
 
-命令：
+`命令：`
 > cat 文件名.tar | docker import - 镜像用户/镜像名:镜像版本号
 
-例如：
+`例如：`
 > cat abc.tar | docker import - shics/ubuntu:3.7
 
-作用：
+`作用：`
 > import 从 tar 包中的内容创建一个新的文件系统再导入为镜像
