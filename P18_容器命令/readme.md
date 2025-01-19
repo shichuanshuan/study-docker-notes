@@ -1,7 +1,6 @@
-# docker run
-命令：docker run 镜像名
-
-作用：新建或启动容器
+# 新建或启动容器
+命令：
+> docker run 镜像名
 
 --name=“容器新名字” 为容器指定一个名词；不填随机生成名字
 
@@ -15,12 +14,12 @@
 
 -p：指定端口映射
 
-# docker ps
+示例：
+> docker run -it --name=myu1 ubuntu bash
+
+# 列出当前所有正在运行的容器
 命令：
 >docker ps [OPTIONS]
-
-作用：
->列出当前所有正在运行的容器
 
 -a: 列出当前所有正在运行的容器 + 历史上运行过的
 
@@ -37,40 +36,40 @@
 方式2
 > ctrl+p+q：run 进去容器，ctrl+p+q退出，容器不停止
 
-# docker start 
+# 启动已停止运行的容器
 命令：
 > docker start 容器 ID 或容器名
 
-作用：
-> 启动已停止运行的容器
+示例：
+> docker start e1f0ccc9790d
 
-# docker restart
+# 重启容器
 命令：
 > docker restart 容器 ID 或容器名
 
-作用：
-> 重启容器
+示例：
+> docker restart e1f0ccc9790d
 
-# docker stop
+# 停止容器
 命令：
 > docker stop 容器 ID 或容器名
 
-作用：
->停止容器
+示例：
+> docker stop e1f0ccc9790d
 
-# docker kill
+# 强制停止容器
 命令：
 > docker kill 容器 ID 或容器名
 
-作用：
-> 强制停止容器
+示例：
+> docker kill e1f0ccc9790d
 
-# docker rm 
+# 删除已停止的容器
 命令：
 > docker rm 容器 ID (rmi 是删除镜像)
 
-作用：
-> 删除已停止的容器
+示例：
+> docker rm e1f0ccc9790d
 
 一次性删除多个容器实例 docker rm -f $(docker ps -a -q)
 
